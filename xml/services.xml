@@ -59,7 +59,7 @@
             <name>Move-In Cleaning</name>
             <price>$220.00</price>
             <description>Servicio de limpieza antes de mudarse a una nueva casa, asegurando que todo esté limpio y listo para habitar.</description>
-             <image>move_in_cleaning.jpg</image>
+            <image>move_in_cleaning.jpg</image>
         </service>
     </cleaning_services>
 </services>
