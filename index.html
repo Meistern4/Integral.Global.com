@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integral Global</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css"> <!-- Tu archivo CSS adicional -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+
+<body>
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="Integral Global Logo" style="width: 60px;">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <a class="nav-link mr-4" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-4" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mr-4" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-success" href="https://wa.me/0415659321" target="_blank" style="color: white;">WhatsApp</a> <!-- Cambia el número aquí -->
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+
+    <!-- Contenido Principal -->
+    <div class="container mt-4">
+        <h1>Welcome to Integral Global!</h1>
+        <p>Experience exceptional cleaning services designed to meet the highest standards of quality and care.</p>
+    </div>
+
+    <!-- Carrusel de Banner -->
+    <div id="bannerCarousel" class="carousel slide mt-4" data-ride="carousel">
+        <!-- Indicadores -->
+        <ol class="carousel-indicators">
+            <li data-target="#bannerCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#bannerCarousel" data-slide-to="1"></li>
+            <li data-target="#bannerCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Imágenes del Carrusel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/banner1.png" class="d-block w-100" alt="Primera imagen">
+                <div class="carousel-caption d-none d-md-block">
+                    <p>Your trusted partner in exceptional cleaning solutions.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/banner2.png" class="d-block w-100" alt="Segunda imagen">
+                <div class="carousel-caption d-none d-md-block">
+                    <p>High-quality service and attention to detail.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/banner3.png" class="d-block w-100" alt="Tercera imagen">
+                <div class="carousel-caption d-none d-md-block">
+                    <p>Creating pristine and welcoming spaces.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles de Anterior y Siguiente -->
+        <a class="carousel-control-prev" href="#bannerCarousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#bannerCarousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
+    <!-- Secciones de Contenido Adicional -->
+<!-- Sección de Tarjetas de Tipos de Limpieza -->
+<div class="container mt-4">
+    <h2>CLEANING SERVICES WE OFFER</h2>
+    <div class="row" id="services-container"></div>
+</div>
+
+<script>
+// Cargar el archivo XML y mostrar los datos
+fetch('xml/services.xml')
+    .then(response => response.text())
+    .then(data => {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(data, 'application/xml');
+        const services = xmlDoc.getElementsByTagName('service');
+        const container = document.getElementById('services-container');
+
+        for (let i = 0; i < services.length; i++) {
+            const title = services[i].getElementsByTagName('name')[0].textContent;
+            const description = services[i].getElementsByTagName('description')[0].textContent;
+            const image = services[i].getElementsByTagName('image')[0].textContent; // Obtener la URL de la imagen
+
+            const cardHTML = `
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="${image}" class="card-img-top" alt="${title}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">${title}</h5>
+                            <p class="card-text">${description}</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += cardHTML;
+        }
+    })
+    .catch(error => console.error('Error loading XML:', error));
+</script>
+
+  <!-- nuestros datos -->
+  <section id="our-promise" class="py-5 text-center bg-light">
+    <div class="container">
+        <h2 class="display-4 text-dark">OUR PROMISE AND VALUES</h2>
+        
+        <div class="mx-auto" style="max-width: 800px;">
+            <p class="lead text-secondary">
+                At <strong>Integral Global</strong>,we take pride in providing top-tier cleaning services in Sydney with a team of carefully selected and trusted professionals. 
+                Each member of our team has undergone a rigorous selection process to ensure we meet the highest standards of quality and reliability. If you’re looking for a cleaning service you can fully trust,
+                 book with us today and experience the excellence that sets Integral Global apart.
+                
+            </p>
+        </div>
+
+        <h3 class="mt-5 text-dark">OUR NUMBERS</h3>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-4">
+                <h4 class="counter display-5 text-primary" data-target="8925">140</h4>
+                <p class="text-secondary">Residencial Cleaned</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h4 class="counter display-5 text-primary" data-target="627">102</h4>
+                <p class="text-secondary">Commercial Cleaned</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h4 class="counter display-5 text-primary" data-target="9552">132</h4>
+                <p class="text-secondary">Happy Customers</p>
+            </div>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary btn-lg mt-4">Book a Cleaner</a>
+    </div>
+    <div class="container mt-4">
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h2>About Us</h2>
+                <p>Welcome to Integral Global, a company committed to delivering top-quality cleaning services with meticulous attention to detail and dedication. Our team is passionate about creating pristine and welcoming spaces for our clients.</p>
+                <img src="images/about.jpg" class="img-fluid" alt="About Integral Global">
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <h2>Our History</h2>
+                <p>Integral Global was founded by a team with extensive experience in the cleaning industry, driven by the vision of providing outstanding service and building lasting relationships with clients.
+                     Starting from humble beginnings, we have grown through our commitment to excellence and customer satisfaction.</p>
+                <img src="images/history.jpg" class="img-fluid" alt="History of Integral Global">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<div class="container mt-4">
+    <h2>Contact Us</h2>
+
+    <!-- Enquiry Form -->
+ <!-- Formulario de Contacto -->
+<form id="enquiryForm" novalidate>
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" required>
+        <div class="invalid-feedback">Please enter your first name.</div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" required>
+        <div class="invalid-feedback">Please enter your last name.</div>
+    </div>
+    <div class="form-group">
+        <label for="email">Email address</label>
+        <input type="email" class="form-control" id="email" required>
+        <div class="invalid-feedback">Please enter a valid email address.</div>
+    </div>
+    <div class="form-group">
+        <label for="subject">Message Subject</label>
+        <input type="text" class="form-control" id="subject" required>
+        <div class="invalid-feedback">Please enter a subject.</div>
+    </div>
+    <div class="form-group">
+        <label for="message">Message</label>
+        <textarea class="form-control" id="message" rows="4" required></textarea>
+        <div class="invalid-feedback">Please enter a message.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <div id="responseMessage" class="mt-3" style="display: none;"></div>
+</form>
+
+    <div id="responseMessage" class="mt-3" style="display: none;"></div>
+
+
+    
+
+<!-- Pie de página -->
+<footer class="bg-dark text-white text-center py-4 mt-4">
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="right-content social-icons">
+            <a href="https://www.facebook.com" target="_blank" class="text-white mx-2">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.twitter.com" target="_blank" class="text-white mx-2">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" class="text-white mx-2">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+        <div class="left-content">
+            <p class="mb-0">&copy; <span id="current-year"></span> Integral, All rights reserved</p>
+            <p class="mb-0"><a href="privacy.html" target="_blank" class="text-white">Privacy Policy</a></p>
+        </div>
+       
+    </div>
+</footer>
+
+
+
+    <!-- Dependencias de JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script> <!-- Tu archivo JavaScript -->
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+
+        // Configuración de la velocidad del carrusel
+        $('#bannerCarousel').carousel({
+            interval: 3000 // Cambia cada 3 segundos
+        });
+          // Manejar el envío del formulario
+    // Validación de formulario personalizada
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            var form = document.getElementById('enquiryForm');
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    document.getElementById("responseMessage").style.display = "block";
+                    document.getElementById("responseMessage").textContent = "Your message has been sent! We'll get back to you soon.";
+                    form.reset(); // Restablece el formulario
+                }
+                form.classList.add('was-validated');
+            }, false);
+        }, false);
+    })();
+</script>
+    </script>
+
+</body>
+
+</html>
