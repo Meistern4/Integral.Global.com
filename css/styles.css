@@ -2,8 +2,9 @@
 
 /* Cambiar el color de fondo del pie de página */
 footer {
-    background-color: #f8f9fa; /* Color claro */
-    padding: 20px 0; /* Espaciado */
+    background-color: #f8f9fa;
+    padding: 40px 0;
+    text-align: center;
 }
 
 /* Estilo para el encabezado principal */
@@ -47,3 +48,7 @@ p {
     font-size: 25px; /* Tamaño de los íconos de redes sociales */
 }
 
+section {
+    padding: 180px 0; /* Aumenta el espacio superior e inferior */
+    margin: 40px 0; /* Más espacio entre secciones */
+}
