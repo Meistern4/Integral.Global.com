@@ -1,54 +1,91 @@
 /* styles.css */
 
-/* Cambiar el color de fondo del pie de página */
-footer {
-    background-color: #f8f9fa;
-    padding: 40px 0;
-    text-align: center;
+/* RESET STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Estilo para el encabezado principal */
-h1 {
+/* GLOBAL STYLES */
+body {
     font-family: 'Arial', sans-serif;
-    color: #343a40; /* Color oscuro */
-    text-align: center; /* Centrar texto */
+    line-height: 1.6;
+    color: #343a40; /* Color oscuro para el texto */
 }
 
-/* Estilos de la barra de navegación */
-.navbar-nav .nav-link {
-    font-size: 16px; /* Cambia este valor según tus necesidades */
-    font-weight: bold; /* Opcional: hace que el texto sea más grueso */
+/* HEADER STYLES */
+h1 {
+    
+    margin-top: 120px; /* Espacio superior del título */
+    font-size: 4rem; /* Aumenta el tamaño del h1 */
+    font-weight: bold; /* Hace que el texto sea más grueso */
+    text-align: center; /* Centra el h1 */
 }
+
+h2 {
+    
+    margin-top: 120px; /* Espacio superior del título */
+    font-size: 3rem; /* Aumenta el tamaño del h1 */
+    font-weight: bold; /* Hace que el texto sea más grueso */
+    text-align: center; /* Centra el h1 */
+}
+
+.container.mt-4 {
+    margin-top: 8rem; /* Aumenta el espacio encima del banner */
+    margin-bottom: 8rem; /* Ajusta el espacio antes de la siguiente sección */
+}
+
+/* NAVBAR STYLES */
 .navbar {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para la barra de navegación */
 }
 
-/* Añadir espaciado a los párrafos */
-p {
-    line-height: 1.6; /* Aumentar el espacio entre líneas */
-}
-
-/* Estilo del logo */
 .navbar-brand img {
+    width: 45px; /* Ajusta el tamaño del logo */
+    height: auto; /* Mantiene la proporción */
     border-radius: 50%; /* Hacer el logo circular */
 }
-.counter {
-    transition: count 0.5s;
+
+.navbar-nav .nav-link {
+    font-size: 16px; /* Cambia este valor según tus necesidades */
+    font-weight: bold; /* Opcional: hace que el texto sea más grueso */
 }
 
-.navbar-brand img {
-    width: 45px; /* Ajusta el tamaño según tus necesidades */
-    height: auto; /* Mantiene la proporción */
-}
 .navbar-nav .btn {
     margin-left: 10px; /* Espacio entre el botón y el menú */
 }
 
+/* SECTION STYLES */
+section {
+    padding: 80px 0; /* Aumenta el espacio superior e inferior */
+    margin: 120px 0; /* Más espacio entre secciones */
+}
+
+.container.mt-4 p {
+    font-size: 1.25rem; /* Aumenta el tamaño del párrafo */
+    text-align: center; /* Centra el texto del párrafo */
+}
+
+/* PARAGRAPH STYLES */
+p {
+    line-height: 1.6; /* Aumentar el espacio entre líneas */
+}
+
+/* SOCIAL ICONS STYLES */
 .social-icons a {
     font-size: 25px; /* Tamaño de los íconos de redes sociales */
 }
 
-section {
-    padding: 80px 0; /* Aumenta el espacio superior e inferior */
-    margin: 450px 0; /* Más espacio entre secciones */
+/* FOOTER STYLES */
+footer {
+    margin-top: 5rem; /* Aumenta el espacio antes del pie de página */
+    background-color: #f8f9fa; /* Color de fondo del pie de página */
+    padding: 40px 0;
+    text-align: center;
+}
+
+/* ANIMATION STYLES */
+.counter {
+    transition: count 0.5s; /* Transición para contador */
 }
