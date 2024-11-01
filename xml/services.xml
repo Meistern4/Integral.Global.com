@@ -5,25 +5,25 @@
             <name>End of Lease Cleaning</name>
             <price>$220.00</price>
             <description>Detailed cleaning service to ensure the property is in pristine condition for lease termination.</description>
-            <image>end_of_lease_cleaning.jpg</image>
+            <image>end_of_lease_cleaning.jpeg</image>
         </service>
         <service>
             <name>Residential Cleaning</name>
             <price>$100.00</price>
             <description>Comprehensive cleaning for homes, including living areas, kitchens, and bathrooms.</description>
-            <image>residential_cleaning.jpg</image>
+            <image>residential_cleaning.jpeg</image>
         </service>
         <service>
             <name>Deep Cleaning</name>
             <price>$180.00</price>
             <description>Thorough cleaning focusing on sanitization and hard-to-reach areas.</description>
-            <image>deep_cleaning.jpg</image>
+            <image>deep_cleaning.jpeg</image>
         </service>
         <service>
             <name>Spring Cleaning</name>
             <price>$120.00</price>
             <description>Seasonal cleaning to refresh and revitalize all areas of your home.</description>
-            <image>spring_cleaning.jpg</image>
+            <image>spring_cleaning.jpeg</image>
         </service>
         <service>
             <name>Pressure Washing</name>
