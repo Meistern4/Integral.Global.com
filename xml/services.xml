@@ -14,6 +14,12 @@
             <image>images/residential_cleaning.jpeg</image>
         </service>
         <service>
+            <name>Gym Cleaning</name>
+            <price>$140.00</price>
+            <description>Specialized cleaning for gyms, including equipment and common areas to ensure hygiene.</description>
+            <image>images/gym_cleaning.HEIC</image>
+        </service>
+        <service>
             <name>Deep Cleaning</name>
             <price>$180.00</price>
             <description>Thorough cleaning focusing on sanitization and hard-to-reach areas.</description>
@@ -49,11 +55,6 @@
             <description>Routine or one-time cleaning for office spaces to maintain a professional environment.</description>
             <image>images/office_cleaning.jpeg</image>
         </service>
-        <service>
-            <name>Gym Cleaning</name>
-            <price>$140.00</price>
-            <description>Specialized cleaning for gyms, including equipment and common areas to ensure hygiene.</description>
-            <image>images/gym_cleaning.HEIC</image>
-        </service>
+        
     </cleaning_services>
 </services>
