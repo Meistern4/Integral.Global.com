@@ -102,7 +102,10 @@
             const services = xmlDoc.getElementsByTagName('service');
             const container = document.getElementById('cleaning_services'); // Cambiado aquí
 
-            for (let i = 0; i < services.length; i++) {
+
+
+            // Loop through services and limit to 6
+            for (let i = 0; i < services.length && i < 6; i++) {
                 const title = services[i].getElementsByTagName('name')[0].textContent;
                 const description = services[i].getElementsByTagName('description')[0].textContent;
                 const image = services[i].getElementsByTagName('image')[0].textContent; // Get the image URL
