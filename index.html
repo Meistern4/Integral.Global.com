@@ -85,44 +85,45 @@
     <h1>Welcome to Integral Global</h1>
     <p class="mb-4" >Experience exceptional cleaning services designed to meet the highest standards of quality and care.</p>
     
+     <!-- Servicios de limpieza -->
+     <h2>Cleaning Services</h2>
+     <div class="row" id="cleaning_services"></div>
 
-    <!-- Services Section -->
-    <h2>CLEANING SERVICES WE OFFER</h2>
-    <div class="row" id="services-container"></div>
+   
 </div>
 
-    <script>
-        // Load the XML file and display data
-        fetch('xml/services.xml')
-            .then(response => response.text())
-            .then(data => {
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(data, 'application/xml');
-                const services = xmlDoc.getElementsByTagName('service');
-                const container = document.getElementById('services-container');
+<script>
+    // Load the XML file and display data
+    fetch('xml/services.xml')
+        .then(response => response.text())
+        .then(data => {
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(data, 'application/xml');
+            const services = xmlDoc.getElementsByTagName('service');
+            const container = document.getElementById('cleaning_services'); // Cambiado aquí
 
-                for (let i = 0; i < services.length; i++) {
-                    const title = services[i].getElementsByTagName('name')[0].textContent;
-                    const description = services[i].getElementsByTagName('description')[0].textContent;
-                    const image = services[i].getElementsByTagName('image')[0].textContent; // Get the image URL
+            for (let i = 0; i < services.length; i++) {
+                const title = services[i].getElementsByTagName('name')[0].textContent;
+                const description = services[i].getElementsByTagName('description')[0].textContent;
+                const image = services[i].getElementsByTagName('image')[0].textContent; // Get the image URL
 
-                    const cardHTML = `
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <img src="${image}" class="card-img-top" alt="${title}">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">${title}</h5>
-                                    <p class="card-text">${description}</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
-                                </div>
+                const cardHTML = `
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="${image}" class="card-img-top" alt="${title}">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">${title}</h5>
+                                <p class="card-text">${description}</p>
+                                <a href="#" class="btn btn-primary">Learn More</a>
                             </div>
                         </div>
-                    `;
-                    container.innerHTML += cardHTML;
-                }
-            })
-            .catch(error => console.error('Error loading XML:', error));
-    </script>
+                    </div>
+                `;
+                container.innerHTML += cardHTML;
+            }
+        })
+        .catch(error => console.error('Error loading XML:', error));
+</script>
 
     <!-- Our Promise Section -->
     <section id="our-promise" class="py-5 text-center bg-light">
