@@ -53,7 +53,7 @@
             <name>Gym Cleaning</name>
             <price>$140.00</price>
             <description>Specialized cleaning for gyms, including equipment and common areas to ensure hygiene.</description>
-            <image>images/gym_cleaning.jpg</image>
+            <image>images/gym_cleaning.jpeg</image>
         </service>
     </cleaning_services>
 </services>
