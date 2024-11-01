@@ -29,7 +29,7 @@
             <name>Pressure Washing</name>
             <price>$90.00</price>
             <description>High-pressure washing for outdoor areas, driveways, patios, and more.</description>
-            <image>images/pressure_washing.jpg</image>
+            <image>images/pressure_washing.jpeg</image>
         </service>
         <service>
             <name>BBQ y Oven Cleaning</name>
@@ -41,7 +41,7 @@
             <name>Mould Removal</name>
             <price>$150.00</price>
             <description>Professional mould removal to ensure a clean, healthy environment.</description>
-            <image>images/mould_removal.jpg</image>
+            <image>images/mould_removal.jpeg</image>
         </service>
         <service>
             <name>Office Cleaning</name>
