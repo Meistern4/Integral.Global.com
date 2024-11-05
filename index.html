@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Integral Global</title>
+    
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css"> <!-- Custom CSS -->
@@ -82,50 +83,61 @@
 
  <!-- Main Content -->
  <div class="container mt-4">
-    <h1>Welcome to Integral Global</h1>
-    <p class="mb-4" >Experience exceptional cleaning services designed to meet the highest standards of quality and care.</p>
+    <h1>¡You deserve a moment to relax!</h1>
+    
+    <p>Welcome to Integral Global.
+       Where we make your spaces shine.<br>
+       Life gets busy, and cleaning can easily get overlooked.
+    </p>
+    <p>Let us handle it for you! Our team is committed to transforming your spaces into fresh,<br>
+       welcoming places, so you can enjoy more of your time.
+    </p>
+
+
     
      <!-- Servicios de limpieza -->
-     <h2>Cleaning Services</h2>
+     <h2> CLEANING SERVICES WE OFFER </h2>
      <div class="row" id="cleaning_services"></div>
 
    
 </div>
 
 <script>
-    // Load the XML file and display data
-    fetch('xml/services.xml')
-        .then(response => response.text())
-        .then(data => {
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(data, 'application/xml');
-            const services = xmlDoc.getElementsByTagName('service');
-            const container = document.getElementById('cleaning_services'); // Cambiado aquí
+// Load the XML file and display data
+fetch('xml/services.xml')
+    .then(response => response.text())
+    .then(data => {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(data, 'application/xml');
+        const services = xmlDoc.getElementsByTagName('service');
+        const container = document.getElementById('cleaning_services');
 
+        // Loop through services and limit to 3
+        for (let i = 0; i < services.length && i < 3; i++) {
+            const title = services[i].getElementsByTagName('name')[0].textContent;
+            const description = services[i].getElementsByTagName('description')[0].textContent;
+            const image = services[i].getElementsByTagName('image')[0].textContent;
+            const buttonText = services[i].getElementsByTagName('buttonText')[0].textContent; // Obtener el texto del botón
 
-
-            // Loop through services and limit to 6
-            for (let i = 0; i < services.length && i < 6; i++) {
-                const title = services[i].getElementsByTagName('name')[0].textContent;
-                const description = services[i].getElementsByTagName('description')[0].textContent;
-                const image = services[i].getElementsByTagName('image')[0].textContent; // Get the image URL
-
-                const cardHTML = `
-                    <div class="col-md-4 mb-4">
-                        <div class="card">
-                            <img src="${image}" class="card-img-top" alt="${title}">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">${title}</h5>
-                                <p class="card-text">${description}</p>
-                                
-                            </div>
+            // Estructura HTML para la tarjeta
+            const cardHTML = `
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="${image}" class="card-img-top" alt="${title}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">${title}</h5>
+                            <p class="card-text">${description}</p>
+                            <!-- Botón con texto diferente para cada tarjeta -->
+                            <a href="contact.html" class="btn btn-primary">${buttonText}</a>
                         </div>
                     </div>
-                `;
-                container.innerHTML += cardHTML;
-            }
-        })
-        .catch(error => console.error('Error loading XML:', error));
+                </div>
+            `;
+            container.innerHTML += cardHTML;
+        }
+    })
+    .catch(error => console.error('Error loading XML:', error));
+
 </script>
 
     <!-- Our Promise Section -->

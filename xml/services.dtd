@@ -1,8 +1,9 @@
-    <!ELEMENT services (cleaning_services)>  
+    <!ELEMENT services (cleaning_services, adicional_services)>  
     <!ELEMENT cleaning_services (service+)>
+    <!ELEMENT adicional_services (service+)>
     <!ELEMENT service (name, price, description, image)>
     <!ELEMENT name (#PCDATA)>
-    <!ELEMENT price (#PCDATA)>
+    <!ELEMENT buttonText (#PCDATA)>
     <!ELEMENT description (#PCDATA)>
     <!ELEMENT image (#PCDATA)>
 

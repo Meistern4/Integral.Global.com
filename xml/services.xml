@@ -2,59 +2,60 @@
 <services>
     <cleaning_services>
         <service>
-            <name>End of Lease Cleaning</name>
-            <price>$220.00</price>
-            <description>Detailed cleaning service to ensure the property is in pristine condition for lease termination.</description>
-            <image>images/end_of_lease_cleaning.jpeg</image>
-        </service>
-        <service>
-            <name>Residential Cleaning</name>
-            <price>$100.00</price>
+            <name>Regular Cleaning</name>
+            <buttonText>BOOK REGULAR CLEANING</buttonText>
             <description>Comprehensive cleaning for homes, including living areas, kitchens, and bathrooms.</description>
             <image>images/residential_cleaning.jpeg</image>
         </service>
         <service>
-            <name>Gym Cleaning</name>
-            <price>$140.00</price>
-            <description>Specialized cleaning for gyms, including equipment and common areas to ensure hygiene.</description>
-            <image>images/gym_cleaning.HEIC</image>
-        </service>
-        <service>
             <name>Deep Cleaning</name>
-            <price>$180.00</price>
+            <buttonText>BOOK DEEP CLEANING</buttonText>
             <description>Thorough cleaning focusing on sanitization and hard-to-reach areas.</description>
             <image>images/deep_cleaning.jpeg</image>
         </service>
         <service>
-            <name>Spring Cleaning</name>
-            <price>$120.00</price>
-            <description>Seasonal cleaning to refresh and revitalize all areas of your home.</description>
-            <image>images/spring_cleaning.jpeg</image>
+            <name>End of Lease Cleaning</name>
+            <buttonText>BOOK END OF LEASE CLEANING</buttonText>
+            <description>Detailed cleaning service to ensure the property is in pristine condition for lease termination.</description>
+            <image>images/end_of_lease_cleaning.jpeg</image>
         </service>
+    </cleaning_services>
+    <adicional_services>
         <service>
-            <name>Pressure Washing</name>
-            <price>$90.00</price>
-            <description>High-pressure washing for outdoor areas, driveways, patios, and more.</description>
-            <image>images/pressure_washing.jpeg</image>
-        </service>
-        <service>
-            <name>BBQ y Oven Cleaning</name>
-            <price>$60.00</price>
+            <name>BBQ and Oven Cleaning</name>
+            <buttonText>BOOK BBQ AND OVEN CLEANING</buttonText>
             <description>Specialized cleaning to remove grease and residue from BBQs and ovens.</description>
             <image>images/bbq_oven_cleaning.jpeg</image>
         </service>
         <service>
+            <name>Pressure Washing</name>
+            <buttonText>BOOK PRESSURE WASHING</buttonText>
+            <description>High-pressure washing for outdoor areas, driveways, patios, and more.</description>
+            <image>images/pressure_washing.jpeg</image>
+        </service>
+        <service>
             <name>Mould Removal</name>
-            <price>$150.00</price>
+            <buttonText>BOOK MOULD REMOVAL</buttonText>
             <description>Professional mould removal to ensure a clean, healthy environment.</description>
             <image>images/mould_removal.jpeg</image>
         </service>
         <service>
+            <name>Spring Cleaning</name>
+            <buttonText>BOOK SPRING CLEANING</buttonText>
+            <description>Seasonal cleaning to refresh and revitalize all areas of your home.</description>
+            <image>images/spring_cleaning.jpeg</image>
+        </service>
+        <service>
+            <name>Gym Cleaning</name>
+            <buttonText>BOOK GYM CLEANING</buttonText>
+            <description>Specialized cleaning for gyms, including equipment and common areas to ensure hygiene.</description>
+            <image>images/gym_cleaning.HEIC</image>
+        </service>
+        <service>
             <name>Office Cleaning</name>
-            <price>$130.00</price>
+            <buttonText>BOOK OFFICE CLEANING</buttonText>
             <description>Routine or one-time cleaning for office spaces to maintain a professional environment.</description>
             <image>images/office_cleaning.jpeg</image>
         </service>
-        
-    </cleaning_services>
+    </adicional_services>
 </services>

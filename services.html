@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <!-- Navegación -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <!-- Navigation -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="index.html">
-            <img src="images/logo.png" alt="Integral Global Logo" style="width: 45px;">
+            <img src="images/logo.png" alt="Integral Global Logo" style="width: 60px;">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,13 +20,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link mr-4" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
+                    <a class="nav-link mr-4" href="services.html">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+                    <a class="nav-link mr-4" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-success" href="https://wa.me/0415659321" target="_blank" style="color: white;">WhatsApp</a> <!-- Update number here -->
                 </li>
             </ul>
         </div>
@@ -38,53 +41,101 @@
         <!-- Servicios de limpieza -->
         <h2>Cleaning Services</h2>
         <div class="row" id="cleaning_services"></div>
-    </div>
+    
 
-    <script>
+<script>
+        // Load the XML file and display data
         // Load the XML file and display data
         fetch('xml/services.xml')
-            .then(response => response.text())
-            .then(data => {
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(data, 'application/xml');
-                const services = xmlDoc.getElementsByTagName('service');
-                const container = document.getElementById('cleaning_services'); // Cambiado aquí
+        .then(response => response.text())
+        .then(data => {
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(data, 'application/xml');
+        const services = xmlDoc.getElementsByTagName('service');
+        const container = document.getElementById('cleaning_services');
 
-                for (let i = 0; i < services.length; i++) {
-                    const title = services[i].getElementsByTagName('name')[0].textContent;
-                    const description = services[i].getElementsByTagName('description')[0].textContent;
-                    const image = services[i].getElementsByTagName('image')[0].textContent; // Get the image URL
+        // Loop through services and limit to 3
+        for (let i = 0; i < services.length && i < 3; i++) {
+            const title = services[i].getElementsByTagName('name')[0].textContent;
+            const description = services[i].getElementsByTagName('description')[0].textContent;
+            const image = services[i].getElementsByTagName('image')[0].textContent;
+            const buttonText = services[i].getElementsByTagName('buttonText')[0].textContent; // Obtener el texto del botón
 
-                    const cardHTML = `
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <img src="${image}" class="card-img-top" alt="${title}">
-                                <div class="card-body text-center">
-                                    <h5 class="card-title">${title}</h5>
-                                    <p class="card-text">${description}</p>
-                                    <a href="#" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
+            // Estructura HTML para la tarjeta
+            const cardHTML = `
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="${image}" class="card-img-top" alt="${title}">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">${title}</h5>
+                            <p class="card-text">${description}</p>
+                            <!-- Botón con texto diferente para cada tarjeta -->
+                            <a href="contact.html" class="btn btn-primary">${buttonText}</a>
                         </div>
-                    `;
-                    container.innerHTML += cardHTML;
-                }
-            })
-            .catch(error => console.error('Error loading XML:', error));
-    </script>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += cardHTML;
+        }
+        })
+        .catch(error => console.error('Error loading XML:', error));
+</script>
 
-    <footer class="text-center mt-4">
+        <!-- Servicios de limpieza -->
+        <h2>Adicional Services</h2>
+            <div class="row" id="adicional_services"></div>
+
+
+ <script>
+        // Load the XML file and display data
+        // Load the XML file and display data
+        fetch('xml/services.xml')
+        .then(response => response.text())
+        .then(data => {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(data, 'application/xml');
+    const services = xmlDoc.getElementsByTagName('service');
+    const container = document.getElementById('adicional_services');
+
+    // Loop through services and limit to 3
+    for (let i = 3; i < services.length && i < 9; i++) {
+        const title = services[i].getElementsByTagName('name')[0].textContent;
+        const description = services[i].getElementsByTagName('description')[0].textContent;
+        const image = services[i].getElementsByTagName('image')[0].textContent;
+        const buttonText = services[i].getElementsByTagName('buttonText')[0].textContent; // Obtener el texto del botón
+
+        // Estructura HTML para la tarjeta
+        const cardHTML = `
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="${image}" class="card-img-top" alt="${title}">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">${title}</h5>
+                        <p class="card-text">${description}</p>
+                        <!-- Botón con texto diferente para cada tarjeta -->
+                        <a href="contact.html" class="btn btn-primary">${buttonText}</a>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.innerHTML += cardHTML;
+        }
+            })
+        .catch(error => console.error('Error loading XML:', error));
+     </script>
+</div>
+         <footer class="text-center mt-4">
         <p>&copy; <span id="current-year"></span> Integral Global</p>
         <p><a href="privacy.html" target="_blank">Privacy Policy</a></p>
-    </footer>
+        </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
-    <script>
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+        <script>
         loadMenu();
         document.getElementById("current-year").textContent = new Date().getFullYear();
-    </script>
+ </script>
 </body>
 </html>

@@ -17,16 +17,17 @@ body {
 /* HEADER STYLES */
 h1 {
     
-    margin-top: 120px; /* Espacio superior del título */
-    font-size: 4rem; /* Aumenta el tamaño del h1 */
+    margin-top: 70px; /* Espacio superior del título */
+    font-size: 3rem; /* Aumenta el tamaño del h1 */
     font-weight: bold; /* Hace que el texto sea más grueso */
     text-align: center; /* Centra el h1 */
 }
 
 h2 {
     
-    margin-top: 120px; /* Espacio superior del título */
-    font-size: 3rem; /* Aumenta el tamaño del h1 */
+    margin-top: 70px; /* Espacio superior del título */
+    margin-bottom: 20px; /* Espacio superior del título */
+    font-size: 2rem; /* Aumenta el tamaño del h1 */
     font-weight: bold; /* Hace que el texto sea más grueso */
     text-align: center; /* Centra el h1 */
 }
